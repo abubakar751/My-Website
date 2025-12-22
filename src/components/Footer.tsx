@@ -124,9 +124,7 @@ const Footer = () => {
           <p className="text-primary-foreground/60 text-sm">
             © {currentYear} Abu Bakar. All rights reserved.
           </p>
-          <p className="text-primary-foreground/60 text-sm">
-            Built with ❤️ using React & TailwindCSS
-          </p>
+          
         </div>
       </div>
     </footer>
