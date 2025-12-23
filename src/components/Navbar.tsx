@@ -256,9 +256,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="mt-auto">
-                  <Button asChild className="w-full rounded-xl gradient-bg text-lg py-6">
-                    <Link to="/contact">Hire Me</Link>
-                  </Button>
+              
                 </div>
               </div>
             </motion.aside>
