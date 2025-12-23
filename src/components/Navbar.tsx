@@ -127,9 +127,7 @@ const Navbar = () => {
                 <Phone className="w-4 h-4" />
                 <span>+91 8591131541</span>
               </a>
-              <Button asChild className="rounded-xl gradient-bg hover:opacity-90 transition-opacity">
-                <Link to="/contact">Hire Me</Link>
-              </Button>
+              
             </div>
 
             {/* Mobile Menu Button */}
