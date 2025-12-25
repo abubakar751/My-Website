@@ -84,7 +84,8 @@ const Navbar = () => {
             {/* Contact Info & CTA */}
             <div className="hidden lg:flex items-center gap-4">
               <a
-  href="https://wa.me/918591131541?text=Hello%20Abu%20Bakar!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you."
+  href="https://wa.me/918591131541?text=Hello%20Abu%20Bakar!%20I%20visited%20https://abubakar.ujiyaar.com%20and%20would%20like%20to%20discuss%20a%20project%20with%20you."
+
   target="_blank"
   rel="noopener noreferrer"
   className="group flex items-center gap-3 p-4 rounded-xl bg-green-50 text-green-700 hover:bg-green-100 transition-all duration-300 hover:shadow-md border border-green-200"
@@ -198,7 +199,8 @@ const Navbar = () => {
                   <p className="text-sm text-muted-foreground mb-4">Contact Info</p>
                   <div className="flex flex-col gap-3">
                     <a
-  href="https://wa.me/918591131541?text=Hello%20Abu%20Bakar!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you."
+  href="https://wa.me/918591131541?text=Hello%20Abu%20Bakar!%20I%20visited%20https://abubakar.ujiyaar.com%20and%20would%20like%20to%20discuss%20a%20project%20with%20you."
+
   target="_blank"
   rel="noopener noreferrer"
   className="group flex items-center gap-3 p-4 rounded-xl bg-green-50 text-green-700 hover:bg-green-100 transition-all duration-300 hover:shadow-md border border-green-200"

@@ -67,7 +67,8 @@ const Contact = () => {
       title: 'WhatsApp',
       value: '+91 8591131541',
       description: 'Fast replies • Usually within hours',
-      href: 'https://wa.me/918591131541?text=Hello%20Abu%20Bakar!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.',
+      href: 'https://wa.me/918591131541?text=Hello%20Abu%20Bakar!%20I%20visited%20https://abubakar.ujiyaar.com%20and%20would%20like%20to%20discuss%20a%20project%20with%20you.'
+,
       color: 'bg-emerald-50 text-emerald-700',
       borderColor: 'border-emerald-200',
       badge: 'Live',
@@ -235,7 +236,7 @@ const Contact = () => {
                   <div className="mt-8 pt-8 border-t border-border">
                     <p className="text-sm text-muted-foreground mb-4">Quick Contact</p>
                     <a
-                      href="https://wa.me/918591131541?text=Hello!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
+                      href="https://wa.me/918591131541?text=Hello%20Abu%20Bakar!%20I%20visited%20https://abubakar.ujiyaar.com%20and%20would%20like%20to%20discuss%20a%20project%20with%20you."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group flex items-center gap-3 p-4 rounded-xl bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-all duration-300 hover:shadow-md border border-emerald-200"
