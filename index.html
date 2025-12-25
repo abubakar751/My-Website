@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     
-    <!-- Favicon और Icons -->
+    <!-- Favicon और Icons - Optimized Version -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/jpeg" href="/photo.jpg">
     <link rel="shortcut icon" href="/photo.jpg" type="image/jpeg">
     
-    <!-- Apple Touch Icons -->
+    <!-- Apple Touch Icons - Optimized -->
     <link rel="apple-touch-icon" href="/photo.jpg">
     <link rel="apple-touch-icon" sizes="57x57" href="/photo.jpg">
     <link rel="apple-touch-icon" sizes="72x72" href="/photo.jpg">
@@ -23,10 +24,16 @@
     <link rel="icon" type="image/jpeg" sizes="32x32" href="/photo.jpg">
     <link rel="icon" type="image/jpeg" sizes="48x48" href="/photo.jpg">
     
+    <!-- Modern Favicon Setup -->
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3b82f6">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags - Title में सभी variations -->
-    <title>Abu Bakar  | Software Developer | Java Developer | India</title>
+    <title>Abu Bakar | Software Developer | Java Developer | India | Abubakar</title>
     
     <!-- Description में सभी name variations -->
     <meta
@@ -78,6 +85,16 @@
       "
     />
 
+    <!-- Enhanced Meta Tags for Better SEO -->
+    <meta name="name-variations" content="Abu Bakar, Abubakar, ABU BAKAR, abu bakar, abubakar, AbuBakar, Abubakar751" />
+    <meta name="name-matching" content="fuzzy, partial, exact" />
+    <meta name="entity" content="Abu Bakar (Abubakar)" />
+    <meta name="entity-type" content="Person" />
+    <meta name="entity-id" content="abubakar-software-developer-india" />
+    <meta name="search-intent" content="software developer, java developer, web developer, hire developer india" />
+    <meta name="search-query" content="Abu Bakar Software Developer, Abubakar Java Developer" />
+    <meta name="search-type" content="person, service, portfolio" />
+
     <!-- Open Graph / Facebook - Title में variations -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://abubakar.ujiyaar.com/" />
@@ -122,9 +139,11 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#3b82f6" />
+    <meta name="theme-color" content="#3b82f6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1e40af" media="(prefers-color-scheme: dark)" />
     <meta name="msapplication-TileColor" content="#3b82f6">
     <meta name="msapplication-navbutton-color" content="#3b82f6">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     
     <!-- Mobile Web App Capable -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -141,6 +160,11 @@
     <meta name="revisit-after" content="7 days" />
     <meta name="rating" content="General" />
     <meta name="distribution" content="Global" />
+    
+    <!-- Enhanced Location Meta Tags -->
+    <meta name="geo.location" content="IN-MH;IN-UP;IN-ALL" />
+    <meta name="geo.country" content="India" />
+    <meta name="geo.target" content="all-india" />
     
     <!-- Content Language -->
     <meta http-equiv="Content-Language" content="en" />
@@ -168,11 +192,11 @@
         "@type": "Person",
         "@id": "http://abubakar.ujiyaar.com/#person",
         "name": "Abu Bakar",
-        "alternateName": ["Abubakar", "abu bakar", "abubakar"],
+        "alternateName": ["Abubakar", "abu bakar", "abubakar", "AbuBakar", "Abubakar751"],
         "givenName": "Abu",
         "familyName": "Bakar",
         "additionalName": "Abubakar",
-        "jobTitle": ["Software Developer", "Java Developer", "Full Stack Developer"],
+        "jobTitle": ["Software Developer", "Java Developer", "Full Stack Developer", "Web Developer"],
         "image": "http://abubakar.ujiyaar.com/photo.jpg",
         "email": "abubakar751@example.com",
         "telephone": "+91-XXXXXXXXXX",
@@ -233,7 +257,7 @@
         "@id": "http://abubakar.ujiyaar.com/#website",
         "url": "http://abubakar.ujiyaar.com/",
         "name": "Abu Bakar (Abubakar) Portfolio",
-        "alternateName": ["Abubakar Portfolio", "abu bakar portfolio"],
+        "alternateName": ["Abubakar Portfolio", "abu bakar portfolio", "Abu Bakar Developer Portfolio"],
         "description": "Portfolio website of Abu Bakar (Abubakar) - Software Developer & Java Developer from India",
         "publisher": {
           "@id": "http://abubakar.ujiyaar.com/#person"
@@ -387,7 +411,7 @@
       }
     </script>
 
-    <!-- Local Business Schema (अगर freelance/consultancy करते हैं) -->
+    <!-- Local Business Schema -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -429,18 +453,134 @@
       }
     </script>
 
+    <!-- Job Posting Schema for Availability -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        "title": "Available for Software Development Projects",
+        "description": "Abu Bakar (Abubakar) is available for software development projects across India. Java Developer, Spring Boot Developer, Full Stack Developer.",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "abubakar-availability",
+          "value": "available-for-hire"
+        },
+        "datePosted": "2024-12-22",
+        "validThrough": "2025-12-31",
+        "employmentType": "CONTRACTOR,FREELANCE,FULL_TIME,PART_TIME",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Self-Employed",
+          "sameAs": "http://abubakar.ujiyaar.com"
+        },
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "India",
+            "addressRegion": ["Maharashtra", "Uttar Pradesh", "All India"]
+          }
+        },
+        "baseSalary": {
+          "@type": "MonetaryAmount",
+          "currency": "INR",
+          "value": {
+            "@type": "QuantitativeValue",
+            "minValue": 0,
+            "maxValue": 0,
+            "unitText": "MONTH"
+          }
+        },
+        "skills": "Java, Spring Boot, React, Node.js, REST API, Microservices",
+        "responsibilities": "Software Development, Web Application Development, API Development",
+        "qualifications": "Experience in Java and Web Technologies",
+        "educationRequirements": "Bachelor's Degree in Computer Science or related field",
+        "experienceRequirements": "2+ years software development experience",
+        "incentiveCompensation": "Based on project requirements",
+        "industry": "Information Technology",
+        "occupationalCategory": "15-1252.00 Software Developers"
+      }
+    </script>
+
+    <!-- Search Results Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SearchResultsPage",
+        "name": "Abu Bakar (Abubakar) - Software Developer Search Results",
+        "description": "Search results for Abu Bakar, Abubakar, Software Developer, Java Developer, India",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Abu Bakar",
+          "alternateName": "Abubakar",
+          "jobTitle": "Software Developer"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "query-input": "required name=search_term_string",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "http://abubakar.ujiyaar.com/?search={search_term_string}",
+            "actionPlatform": [
+              "https://schema.org/DesktopWebPlatform",
+              "https://schema.org/MobileWebPlatform",
+              "https://schema.org/IOSPlatform",
+              "https://schema.org/AndroidPlatform"
+            ]
+          }
+        }
+      }
+    </script>
+
+    <!-- Search Action Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SearchAction",
+        "query": "Abu Bakar Software Developer",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "http://abubakar.ujiyaar.com/?q={search_term_string}",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        },
+        "query-input": {
+          "@type": "PropertyValueSpecification",
+          "valueRequired": true,
+          "valueName": "search_term_string"
+        }
+      }
+    </script>
+
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- Additional SEO के लिए hidden content (search engines के लिए) -->
-    <div style="display: none;" aria-hidden="true">
+    <!-- Enhanced SEO के लिए hidden content (search engines के लिए) -->
+    <div style="display: none;" aria-hidden="true" itemscope itemtype="https://schema.org/Person">
+      <span itemprop="name">Abu Bakar</span>
+      <span itemprop="alternateName">Abubakar</span>
+      <span itemprop="additionalName">AbuBakar</span>
+      <span itemprop="jobTitle">Software Developer</span>
+      <span itemprop="jobTitle">Java Developer</span>
+      <span itemprop="jobTitle">Full Stack Developer</span>
+      <span itemprop="description">Abu Bakar (also known as Abubakar) is a professional Software Developer and Java Developer based in India, available for projects across Maharashtra, Uttar Pradesh, and All India.</span>
+      <span itemprop="knowsAbout">Java Development, Spring Boot, Web Development, REST API, Microservices, React, Node.js</span>
+      <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="addressCountry">India</span>
+        <span itemprop="addressRegion">Maharashtra, Uttar Pradesh, All India</span>
+      </span>
+      <span itemprop="availableAtOrFrom">India</span>
+      <span itemprop="url">http://abubakar.ujiyaar.com</span>
       <h1>Abu Bakar (Abubakar)</h1>
-      <h2>Software Developer | Java Developer | Web Developer</h2>
-      <p>Abu Bakar, also known as Abubakar, is a professional software developer based in India.</p>
-      <p>Keywords: Abu Bakar, Abubakar, abu bakar, abubakar, Software Developer, Java Developer, India</p>
+      <h2>Software Developer | Java Developer | Web Developer | India</h2>
+      <p>Abu Bakar, also known as Abubakar, is a professional software developer based in India specializing in Java, Spring Boot, React, and full-stack development.</p>
+      <p>Available for projects across Maharashtra, Uttar Pradesh (UP), and all India.</p>
+      <p>Keywords: Abu Bakar, Abubakar, abu bakar, abubakar, Software Developer, Java Developer, India, Maharashtra, UP, Full Stack Developer, Web Developer</p>
     </div>
     
     <!-- Google Analytics -->
@@ -460,5 +600,21 @@
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "your_clarity_id");
     </script>
+
+    <!-- Additional SEO Scripts -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Abu Bakar Portfolio Collection",
+      "description": "Collection of software development projects by Abu Bakar (Abubakar)",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Abu Bakar",
+        "alternateName": "Abubakar"
+      }
+    }
+    </script>
+
   </body>
 </html>

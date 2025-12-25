@@ -1,14 +1,23 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: http://abubakar.ujiyaar.com/sitemap.xml
+
+# Abu Bakar SEO Optimization
+# Name variations for search engines
 User-agent: Googlebot
 Allow: /
+Disallow: 
 
 User-agent: Bingbot
 Allow: /
+Disallow: 
 
-User-agent: Twitterbot
+User-agent: Slurp
 Allow: /
+Disallow: 
 
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: *
-Allow: /
+# Crawl-delay for all bots
+Crawl-delay: 2
