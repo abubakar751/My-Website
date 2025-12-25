@@ -67,7 +67,7 @@ const Contact = () => {
       title: 'WhatsApp',
       value: '+91 8591131541',
       description: 'Fast replies • Usually within hours',
-      href: 'https://wa.me/918591131541?text=Hello!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.',
+      href: 'https://wa.me/918591131541?text=Hello%20Abu%20Bakar!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.',
       color: 'bg-emerald-50 text-emerald-700',
       borderColor: 'border-emerald-200',
       badge: 'Live',
