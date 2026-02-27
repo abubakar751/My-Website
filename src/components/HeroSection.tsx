@@ -12,7 +12,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-muted/30 pt-16 lg:pt-0"> {/* Added pt-16 lg:pt-0 */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-muted/30 pt-16 lg:pt-0">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -31,7 +31,7 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mt-8 lg:mt-0"> {/* Added mt-8 lg:mt-0 */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mt-8 lg:mt-0">
           {/* Photo Section - Top on mobile, Left on desktop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -42,7 +42,7 @@ const HeroSection = () => {
             {/* Decorative elements */}
             <div className="relative">
               {/* Main photo container with frame effects */}
-              <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 mx-auto lg:mx-0"> {/* Reduced mobile size */}
+              <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 mx-auto lg:mx-0">
                 {/* Outer gradient ring */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 rounded-[2.5rem] lg:rounded-[3rem] blur-xl"></div>
                 
@@ -60,10 +60,10 @@ const HeroSection = () => {
                 
                 {/* Photo container */}
                 <div className="relative w-full h-full rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-background">
-                  {/* Profile photo */}
+                  {/* Profile photo - FIXED: Alt text improved */}
                   <img
                     src="/photo.jpg"
-                    alt="Abu Bakar - Software Developer"
+                    alt="Abu Bakar - Professional Software Developer and Java Developer from India"
                     className="w-full h-full object-cover"
                   />
                   
@@ -78,7 +78,7 @@ const HeroSection = () => {
                     className="absolute -top-2 -right-2 lg:-top-3 lg:-right-3 bg-background border-2 border-primary/20 rounded-full p-1 lg:p-2 shadow-lg"
                   >
                     <div className="w-8 h-8 lg:w-12 lg:h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-xs lg:text-sm">JD</span>
+                      <span className="text-white font-bold text-xs lg:text-sm">SD</span>
                     </div>
                   </motion.div>
                   
@@ -110,7 +110,7 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Content Section */}
+          {/* Content Section - FIXED: H1/H2 tags improved */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -124,10 +124,11 @@ const HeroSection = () => {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-sm font-medium mb-6 lg:mb-8"
             >
-              
+              {/* FIXED: Added badge content */}
+              <span>👋 Welcome to my portfolio</span>
             </motion.div>
 
-            {/* Title */}
+            {/* Title - FIXED: H1 with full name and role */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -136,27 +137,32 @@ const HeroSection = () => {
             >
               Hi, I'm{' '}
               <span className="gradient-text">Abu Bakar</span>
+              <span className="block text-2xl sm:text-3xl lg:text-4xl mt-2 text-muted-foreground">
+                Software Developer
+              </span>
             </motion.h1>
             
+            {/* FIXED: H2 with specialization */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl sm:text-2xl lg:text-4xl font-semibold text-foreground mb-3 lg:mb-4"
+              className="text-xl sm:text-2xl lg:text-3xl font-semibold text-foreground mb-3 lg:mb-4"
             >
-              Software Developer &{' '}
-              <span className="text-primary">Specialist Java Developer</span>
+              Specialist in{' '}
+              <span className="text-primary">Java & Full-Stack Development</span>
             </motion.h2>
 
-            {/* Description */}
+            {/* Description - FIXED: Added keywords */}
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-8 lg:mb-10 leading-relaxed"
             >
-              Building robust, scalable applications with Java, Spring Boot, and modern web technologies.
-              Transforming ideas into powerful solutions.
+              As a passionate <strong>Software Developer and Java Specialist</strong>, I build robust, 
+              scalable applications with Spring Boot, microservices, and modern web technologies.
+              Transforming ideas into powerful solutions for clients across India.
             </motion.p>
 
             {/* CTAs */}

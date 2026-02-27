@@ -54,23 +54,24 @@ const About = () => {
     <>
       {/* ========== SEO META TAGS ========== */}
       <Helmet>
-        <title>About Abu Bakar (Abubakar) | Software Developer & Java Developer | India</title>
-        <meta name="description" content="Learn about Abu Bakar (Abubakar) – Professional Software Developer, Java Developer from India. BCA graduate from Siddharth University (2024). Expert in Java, Spring Boot, Angular, MySQL. Available in Maharashtra, UP." />
-        <meta name="keywords" content="About Abu Bakar, About Abubakar, Abu Bakar Software Developer, Abubakar Java Developer, Abu Bakar BCA Siddharth University, Java Developer Profile India, Full Stack Developer About, Abu Bakar Skills, Abubakar Experience, Java Spring Boot Developer India" />
-        <meta name="author" content="Abu Bakar (Abubakar) - Software Developer" />
+        {/* FIXED: Title mein pehle "Abu Bakar Software Developer" */}
+        <title>Abu Bakar Software Developer | About - Java Developer India</title>
+        <meta name="description" content="About Abu Bakar - Professional Software Developer and Java Developer from India. BCA graduate from Siddharth University (2024). Expert in Java, Spring Boot, Angular, MySQL. Available in Maharashtra, UP." />
+        <meta name="keywords" content="Abu Bakar Software Developer, About Abu Bakar, About Abubakar, Abu Bakar Java Developer, Abubakar BCA Siddharth University, Java Developer Profile India, Full Stack Developer About, Abu Bakar Skills, Abubakar Experience, Java Spring Boot Developer India" />
+        <meta name="author" content="Abu Bakar - Software Developer" />
         
-        {/* Open Graph Tags */}
-        <meta property="og:title" content="About Abu Bakar (Abubakar) | Software Developer & Java Developer | India" />
-        <meta property="og:description" content="Learn about Abu Bakar – Professional Software Developer, Java Developer from India. BCA graduate, expert in Java, Spring Boot, Angular." />
+        {/* Open Graph Tags - FIXED */}
+        <meta property="og:title" content="Abu Bakar Software Developer | About - Java Developer India" />
+        <meta property="og:description" content="About Abu Bakar – Professional Software Developer and Java Developer from India. BCA graduate, expert in Java, Spring Boot, Angular." />
         <meta property="og:url" content="https://abubakar.ujiyaar.com/about" />
         <meta property="og:image" content="https://abubakar.ujiyaar.com/photo.jpg" />
         <meta property="og:type" content="profile" />
         <meta property="profile:first_name" content="Abu" />
         <meta property="profile:last_name" content="Bakar" />
         
-        {/* Twitter Cards */}
-        <meta name="twitter:title" content="About Abu Bakar (Abubakar) | Software Developer | India" />
-        <meta name="twitter:description" content="Learn about Abu Bakar – Java Developer & Software Developer from India. BCA graduate, Spring Boot expert." />
+        {/* Twitter Cards - FIXED */}
+        <meta name="twitter:title" content="Abu Bakar Software Developer | About - India" />
+        <meta name="twitter:description" content="About Abu Bakar – Professional Software Developer & Java Developer from India. BCA graduate, Spring Boot expert." />
         <meta name="twitter:image" content="https://abubakar.ujiyaar.com/photo.jpg" />
         
         {/* Canonical URL */}
@@ -84,7 +85,7 @@ const About = () => {
             "@id": "https://abubakar.ujiyaar.com/about#aboutpage",
             "url": "https://abubakar.ujiyaar.com/about",
             "name": "About Abu Bakar - Software Developer",
-            "description": "Professional profile of Abu Bakar (Abubakar), Software Developer and Java Developer from India",
+            "description": "Professional profile of Abu Bakar, Software Developer and Java Developer from India",
             "mainEntity": {
               "@type": "Person",
               "@id": "https://abubakar.ujiyaar.com/#person",
@@ -179,11 +180,11 @@ const About = () => {
                   About Me
                 </span>
                 <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                  Software Developer{' '}
-                  <span className="gradient-text">Specialist Java Developer</span>
+                  Abu Bakar{' '}
+                  <span className="gradient-text">Software Developer</span>
                 </h1>
                 <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                  Passionate about building robust, scalable applications that solve real-world problems
+                  Passionate Java Developer building robust, scalable applications that solve real-world problems
                 </p>
               </motion.div>
 
@@ -228,7 +229,7 @@ const About = () => {
                     <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-background">
                       <img
                         src="/photo.jpg"
-                        alt="Abu Bakar - Java Developer from India, BCA Graduate Siddharth University"
+                        alt="Abu Bakar - Software Developer and Java Developer from India, BCA Graduate Siddharth University"
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -249,7 +250,7 @@ const About = () => {
                   </div>
                 </motion.div>
 
-                {/* Content Section */}
+                {/* Content Section - FIXED: Strong tags mein "Abu Bakar Software Developer" */}
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -263,7 +264,7 @@ const About = () => {
                   </h2>
                   <div className="space-y-6 text-muted-foreground leading-relaxed">
                     <p>
-                      I am <strong>Abu Bakar (Abubakar)</strong>, a passionate Java developer with expertise in building robust web applications 
+                      I am <strong>Abu Bakar, a passionate Software Developer and Java Developer</strong> with expertise in building robust web applications 
                       using <strong>Java, Spring Boot, Angular, and MySQL</strong>. 
                       I specialize in designing scalable back-end services, developing RESTful APIs, and 
                       implementing security protocols with Spring Security.

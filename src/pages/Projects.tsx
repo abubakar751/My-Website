@@ -132,29 +132,61 @@ const Projects = () => {
 
   return (
     <>
-      {/* ========== SEO META TAGS ========== */}
+      {/* ========== SEO META TAGS - FIXED ========== */}
       <Helmet>
-        <title>Projects by Abu Bakar (Abubakar) | Software Developer & Java Developer | India</title>
-        <meta name="description" content="Explore software development projects by Abu Bakar (Abubakar) – Java Developer from India. Featured projects: Audit Management Software, e-DigiSalesSystem, Hospital Management System, E-Commerce Platform, and more using Spring Boot, Angular, React." />
-        <meta name="keywords" content="Abu Bakar Projects, Abubakar Portfolio, Java Projects India, Spring Boot Projects, Angular Projects, Audit Management Software, e-DigiSalesSystem, Hospital Management System, E-Commerce Platform, Real Estate Portal, Task Management Tool, Java Developer Portfolio India, Full Stack Projects" />
+        {/* Primary Title - Abu Bakar Software Developer */}
+        <title>Projects by Abu Bakar | Software Developer Portfolio | India</title>
+        
+        {/* Meta Description - Focus on Software Developer, not just Java */}
+        <meta name="description" content="Explore software development projects by Abu Bakar (Abubakar) – Full Stack Software Developer from India. Featured projects: Audit Management Software, e-DigiSalesSystem, Hospital Management System, and more using Spring Boot, Angular, React." />
+        
+        {/* Keywords - Balanced with Software Developer focus */}
+        <meta name="keywords" content="Abu Bakar Software Developer, Abubakar Portfolio, Full Stack Developer India, Software Developer Portfolio, Spring Boot Projects, Angular Projects, Java Projects India, Audit Management Software, Hospital Management System, E-Commerce Platform, Real Estate Portal" />
+        
         <meta name="author" content="Abu Bakar (Abubakar) - Software Developer" />
         
         {/* Open Graph Tags */}
-        <meta property="og:title" content="Projects by Abu Bakar (Abubakar) | Software Developer & Java Developer | India" />
-        <meta property="og:description" content="Explore software development projects by Abu Bakar – Java Developer from India. Featured projects using Spring Boot, Angular, React, and more." />
+        <meta property="og:title" content="Projects by Abu Bakar | Software Developer | India" />
+        <meta property="og:description" content="Explore software development projects by Abu Bakar – Full Stack Software Developer from India. Featured projects using Spring Boot, Angular, React, and more." />
         <meta property="og:url" content="https://abubakar.ujiyaar.com/projects" />
         <meta property="og:image" content="https://abubakar.ujiyaar.com/photo.jpg" />
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Abu Bakar Software Developer" />
         
         {/* Twitter Cards */}
-        <meta name="twitter:title" content="Projects by Abu Bakar (Abubakar) | Software Developer | India" />
-        <meta name="twitter:description" content="Explore Java and Spring Boot projects by Abu Bakar – Software Developer from India." />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Projects by Abu Bakar | Software Developer | India" />
+        <meta name="twitter:description" content="Explore software development projects by Abu Bakar – Full Stack Software Developer from India." />
         <meta name="twitter:image" content="https://abubakar.ujiyaar.com/photo.jpg" />
         
         {/* Canonical URL */}
         <link rel="canonical" href="https://abubakar.ujiyaar.com/projects" />
         
-        {/* ========== STRUCTURED DATA (SCHEMA.ORG) ========== */}
+        {/* ========== STRUCTURED DATA (SCHEMA.ORG) - FIXED ========== */}
+        
+        {/* Person Schema - Main Profile */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "@id": "https://abubakar.ujiyaar.com/#person",
+            "name": "Abu Bakar",
+            "alternateName": "Abubakar",
+            "description": "Full Stack Software Developer from India specializing in modern web applications",
+            "url": "https://abubakar.ujiyaar.com",
+            "image": "https://abubakar.ujiyaar.com/photo.jpg",
+            "jobTitle": "Software Developer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Freelance"
+            },
+            "sameAs": [
+              "https://github.com/abubakar751"
+            ],
+            "knowsAbout": ["Software Development", "Full Stack Development", "Spring Boot", "Angular", "React", "Java", "Web Applications"]
+          })}
+        </script>
+        
         {/* Collection Page Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -163,7 +195,7 @@ const Projects = () => {
             "@id": "https://abubakar.ujiyaar.com/projects#collection",
             "url": "https://abubakar.ujiyaar.com/projects",
             "name": "Abu Bakar's Software Development Projects",
-            "description": "Portfolio of software development projects by Abu Bakar (Abubakar), Java Developer from India",
+            "description": "Portfolio of software development projects by Abu Bakar (Abubakar), Full Stack Software Developer from India",
             "mainEntity": {
               "@type": "ItemList",
               "itemListElement": featuredProjects.concat(otherProjects).map((project, index) => ({
@@ -173,11 +205,14 @@ const Projects = () => {
                   "@type": "SoftwareSourceCode",
                   "name": project.title,
                   "description": project.longDescription,
-                  "programmingLanguage": ["Java", "Spring Boot", "Angular", "React"],
+                  "programmingLanguage": project.tags,
                   "runtimePlatform": "Web",
                   "codeRepository": project.github,
                   "image": project.image,
                   "datePublished": project.year,
+                  "author": {
+                    "@id": "https://abubakar.ujiyaar.com/#person"
+                  },
                   "keywords": project.tags.join(", ")
                 }
               }))
@@ -185,15 +220,67 @@ const Projects = () => {
           })}
         </script>
         
-        {/* Breadcrumb Schema */}
+        {/* Breadcrumb Schema - Complete with all pages */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://abubakar.ujiyaar.com/" },
-              { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://abubakar.ujiyaar.com/projects" }
+              { 
+                "@type": "ListItem", 
+                "position": 1, 
+                "name": "Home", 
+                "item": "https://abubakar.ujiyaar.com/" 
+              },
+              { 
+                "@type": "ListItem", 
+                "position": 2, 
+                "name": "Projects", 
+                "item": "https://abubakar.ujiyaar.com/projects" 
+              }
             ]
+          })}
+        </script>
+        
+        {/* Site Navigation Element Schema - For Google Site Links */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SiteNavigationElement",
+            "@id": "https://abubakar.ujiyaar.com/#navigation",
+            "name": [
+              "Home",
+              "About",
+              "Projects",
+              "Contact"
+            ],
+            "url": [
+              "https://abubakar.ujiyaar.com/",
+              "https://abubakar.ujiyaar.com/about",
+              "https://abubakar.ujiyaar.com/projects",
+              "https://abubakar.ujiyaar.com/contact"
+            ]
+          })}
+        </script>
+        
+        {/* WebSite Schema - Important for Google to understand site structure */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": "https://abubakar.ujiyaar.com/#website",
+            "url": "https://abubakar.ujiyaar.com",
+            "name": "Abu Bakar Software Developer",
+            "description": "Portfolio website of Abu Bakar - Full Stack Software Developer from India",
+            "publisher": {
+              "@id": "https://abubakar.ujiyaar.com/#person"
+            },
+            "inLanguage": "en-US",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://abubakar.ujiyaar.com/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
           })}
         </script>
         
@@ -211,9 +298,7 @@ const Projects = () => {
               "image": project.image,
               "datePublished": project.year,
               "author": {
-                "@type": "Person",
-                "@id": "https://abubakar.ujiyaar.com/#person",
-                "name": "Abu Bakar"
+                "@id": "https://abubakar.ujiyaar.com/#person"
               },
               "keywords": project.tags.join(", ")
             })}
@@ -221,6 +306,7 @@ const Projects = () => {
         ))}
       </Helmet>
 
+      {/* Rest of your component code remains exactly the same */}
       <div className="min-h-screen bg-background">
         <Navbar />
         <main className="pt-20">
@@ -240,7 +326,7 @@ const Projects = () => {
                   Featured <span className="gradient-text">Projects</span>
                 </h1>
                 <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                  Showcasing my expertise in Java development with real-world applications
+                  Showcasing my expertise in software development with real-world applications
                 </p>
               </motion.div>
             </div>
@@ -266,7 +352,7 @@ const Projects = () => {
                         <div className="absolute inset-0">
                           <img
                             src={project.image}
-                            alt={`${project.title} - Software project by Abu Bakar (Abubakar) Java Developer`}
+                            alt={`${project.title} - Software project by Abu Bakar, Full Stack Software Developer`}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             onError={(e) => {
                               e.currentTarget.style.display = 'none';
@@ -386,7 +472,7 @@ const Projects = () => {
                     <div className="relative aspect-video overflow-hidden">
                       <img
                         src={project.image}
-                        alt={`${project.title} - Java Spring Boot project by Abu Bakar`}
+                        alt={`${project.title} - Software project by Abu Bakar, Full Stack Developer`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';

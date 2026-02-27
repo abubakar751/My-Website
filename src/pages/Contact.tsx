@@ -113,21 +113,22 @@ const Contact = () => {
     <>
       {/* ========== SEO META TAGS ========== */}
       <Helmet>
-        <title>Contact Abu Bakar (Abubakar) | Software Developer & Java Developer | India</title>
-        <meta name="description" content="Contact Abu Bakar (Abubakar) – Software Developer & Java Developer from India. Reach out via email: abubakartechsak01@gmail.com, phone: +91 8591131541, WhatsApp, or contact form for project inquiries, freelance work, and collaboration." />
-        <meta name="keywords" content="Contact Abu Bakar, Contact Abubakar, Abu Bakar Email, Abubakar Phone Number, Abu Bakar WhatsApp, Hire Java Developer India, Freelance Developer Contact, Software Developer Mumbai, Java Developer UP, abubakartechsak01@gmail.com, +91 8591131541" />
-        <meta name="author" content="Abu Bakar (Abubakar) - Software Developer" />
+        {/* FIXED: Title mein pehle "Abu Bakar Software Developer" */}
+        <title>Abu Bakar Software Developer | Contact - Java Developer India</title>
+        <meta name="description" content="Contact Abu Bakar - Professional Software Developer and Java Developer from India. Reach out via email: abubakartechsak01@gmail.com, phone: +91 8591131541, WhatsApp for project inquiries, freelance work, and collaboration." />
+        <meta name="keywords" content="Abu Bakar Software Developer, Contact Abu Bakar, Contact Abubakar, Abu Bakar Email, Abubakar Phone Number, Abu Bakar WhatsApp, Hire Java Developer India, Freelance Developer Contact, Software Developer Mumbai, Java Developer UP, abubakartechsak01@gmail.com, +91 8591131541" />
+        <meta name="author" content="Abu Bakar - Software Developer" />
         
-        {/* Open Graph Tags */}
-        <meta property="og:title" content="Contact Abu Bakar (Abubakar) | Software Developer & Java Developer | India" />
-        <meta property="og:description" content="Contact Abu Bakar – Software Developer from India. Email: abubakartechsak01@gmail.com, Phone: +91 8591131541, WhatsApp available." />
+        {/* Open Graph Tags - FIXED */}
+        <meta property="og:title" content="Abu Bakar Software Developer | Contact - Java Developer India" />
+        <meta property="og:description" content="Contact Abu Bakar – Professional Software Developer from India. Email: abubakartechsak01@gmail.com, Phone: +91 8591131541, WhatsApp available." />
         <meta property="og:url" content="https://abubakar.ujiyaar.com/contact" />
         <meta property="og:image" content="https://abubakar.ujiyaar.com/photo.jpg" />
         <meta property="og:type" content="contact" />
         
-        {/* Twitter Cards */}
-        <meta name="twitter:title" content="Contact Abu Bakar (Abubakar) | Software Developer | India" />
-        <meta name="twitter:description" content="Contact Abu Bakar – Java Developer from India. Email, phone, and WhatsApp available." />
+        {/* Twitter Cards - FIXED */}
+        <meta name="twitter:title" content="Abu Bakar Software Developer | Contact - India" />
+        <meta name="twitter:description" content="Contact Abu Bakar – Professional Software Developer & Java Developer from India. Email, phone, and WhatsApp available." />
         <meta name="twitter:image" content="https://abubakar.ujiyaar.com/photo.jpg" />
         
         {/* Canonical URL */}
@@ -142,7 +143,7 @@ const Contact = () => {
             "@id": "https://abubakar.ujiyaar.com/contact#contactpage",
             "url": "https://abubakar.ujiyaar.com/contact",
             "name": "Contact Abu Bakar - Software Developer",
-            "description": "Contact page for Abu Bakar (Abubakar), Software Developer and Java Developer from India",
+            "description": "Contact page for Abu Bakar, Software Developer and Java Developer from India",
             "mainEntity": {
               "@id": "https://abubakar.ujiyaar.com/#person"
             }
@@ -169,7 +170,7 @@ const Contact = () => {
             "@id": "https://abubakar.ujiyaar.com/#person",
             "name": "Abu Bakar",
             "alternateName": "Abubakar",
-            "jobTitle": "Software Developer",
+            "jobTitle": ["Software Developer", "Java Developer"],
             "email": "abubakartechsak01@gmail.com",
             "telephone": "+918591131541",
             "contactPoint": [
@@ -253,7 +254,8 @@ const Contact = () => {
                   Get In Touch
                 </span>
                 <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                  Let's Work <span className="gradient-text">Together</span>
+                  Abu Bakar{' '}
+                  <span className="gradient-text">Software Developer</span>
                 </h1>
                 <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                   Have a project in mind or just want to say hello? I'd love to hear from you.

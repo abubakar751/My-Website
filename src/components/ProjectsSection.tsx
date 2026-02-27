@@ -48,7 +48,7 @@ const ProjectsSection = () => {
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Some of my recent work showcasing my expertise in Java development
+            Some of my recent work showcasing my expertise as a <strong>Software Developer</strong>
           </p>
         </motion.div>
 
@@ -67,8 +67,9 @@ const ProjectsSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10" />
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} - Software project by Abu Bakar, Full Stack Developer`}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
                   />
                   
                   {/* Overlay on Hover */}
@@ -81,17 +82,21 @@ const ProjectsSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/90 transition-colors transform -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-100"
+                      aria-label={`View ${project.title} source code on GitHub`}
                     >
                       <Github className="w-4 h-4" />
                     </a>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/90 transition-colors transform -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
+                    {project.live !== '#' && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/90 transition-colors transform -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150"
+                        aria-label={`View ${project.title} live demo`}
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
                   </div>
                   
                   {/* Title on Image */}
@@ -130,19 +135,32 @@ const ProjectsSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-muted text-muted-foreground hover:bg-secondary/10 hover:text-secondary transition-colors text-sm font-medium flex-1"
+                      aria-label={`View ${project.title} source code`}
                     >
                       <Code className="w-4 h-4" />
                       View Code
                     </a>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-medium flex-1"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Live Demo
-                    </a>
+                    {project.live !== '#' ? (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-medium flex-1"
+                        aria-label={`View ${project.title} live demo`}
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Live Demo
+                      </a>
+                    ) : (
+                      <button
+                        disabled
+                        className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-muted text-muted-foreground cursor-not-allowed text-sm font-medium flex-1 opacity-50"
+                        aria-label="Live demo not available"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Coming Soon
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -163,11 +181,19 @@ const ProjectsSection = () => {
             className="rounded-2xl px-8 py-6 text-lg font-semibold border-2 hover:bg-secondary/10 hover:border-secondary hover:text-secondary transition-all group"
           >
             <Link to="/projects" className="flex items-center">
-              View All Projects
+              View All Projects by Abu Bakar
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" />
             </Link>
           </Button>
         </motion.div>
+
+        {/* Hidden SEO-friendly text for better context */}
+        <div className="sr-only">
+          <p>
+            Abu Bakar is a Full Stack Software Developer from India specializing in Java, 
+            Spring Boot, Angular, and React. View more projects in his portfolio.
+          </p>
+        </div>
       </div>
     </section>
   );
