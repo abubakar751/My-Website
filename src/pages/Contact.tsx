@@ -4,7 +4,6 @@ import { Send, Mail, Phone, MapPin, MessageCircle, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
@@ -13,7 +12,6 @@ import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
   useLenis();
-  const { toast } = useToast();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -27,20 +25,37 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    toast({
-      title: 'Message sent successfully!',
-      description: "Thank you for reaching out. I'll get back to you within 24 hours.",
-    });
-
+    // Recipient email
+    const recipientEmail = 'abubakartechsak01@gmail.com';
+    
+    // Prepare subject - use user's subject or default
+    const subject = encodeURIComponent(formData.subject || 'Contact Form Submission from Portfolio');
+    
+    // Prepare email body with all user details
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n\n` +
+      
+     
+      `Message:${formData.message}\n` 
+    );
+    
+    // Create mailto link
+    const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Small delay to show submitting state
+    setTimeout(() => {
+      setIsSubmitting(false);
+    }, 500);
+    
+    // Optional: Reset form after mailto opens
     setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
   };
 
   const contactMethods = [
@@ -405,7 +420,7 @@ const Contact = () => {
                   </div>
                 </motion.div>
 
-                {/* Contact Form */}
+                {/* Contact Form - Modified to use mailto */}
                 <motion.form
                   onSubmit={handleSubmit}
                   initial={{ opacity: 0, x: 30 }}
@@ -501,7 +516,7 @@ const Contact = () => {
                               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                             />
                           </svg>
-                          Sending...
+                          Opening Email...
                         </span>
                       ) : (
                         <>
@@ -510,6 +525,10 @@ const Contact = () => {
                         </>
                       )}
                     </Button>
+                    
+                    <p className="text-xs text-muted-foreground text-center mt-4">
+                      By submitting this form, your email client will open with pre-filled details. You can review and send the email from there.
+                    </p>
                   </div>
                 </motion.form>
               </div>
