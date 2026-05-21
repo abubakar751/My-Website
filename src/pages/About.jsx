@@ -19,34 +19,34 @@ const timeline = [
   { y: "2025", t: "Independent Practice", d: "Working with a small roster of clients on platforms they'll depend on for years." },
 ];
 
-// Enhanced Animation Variants
+// Professional Animation Variants
 const fadeInUp = {
-  hidden: { opacity: 0, y: 60 },
+  hidden: { opacity: 0, y: 40 },
   visible: { 
     opacity: 1, 
     y: 0, 
     transition: { 
-      duration: 0.7, 
-      ease: [0.25, 0.1, 0.25, 1] // Custom easing
+      duration: 0.8, 
+      ease: [0.25, 0.1, 0.25, 1]
     } 
   }
 };
 
 const fadeInLeft = {
-  hidden: { opacity: 0, x: -60 },
+  hidden: { opacity: 0, x: -40 },
   visible: { 
     opacity: 1, 
     x: 0, 
-    transition: { duration: 0.6, ease: "easeOut" } 
+    transition: { duration: 0.7, ease: "easeOut" } 
   }
 };
 
 const fadeInRight = {
-  hidden: { opacity: 0, x: 60 },
+  hidden: { opacity: 0, x: 40 },
   visible: { 
     opacity: 1, 
     x: 0, 
-    transition: { duration: 0.6, ease: "easeOut" } 
+    transition: { duration: 0.7, ease: "easeOut" } 
   }
 };
 
@@ -55,9 +55,8 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: { 
-      staggerChildren: 0.12, 
+      staggerChildren: 0.1, 
       delayChildren: 0.2,
-      ease: "easeOut"
     }
   }
 };
@@ -67,7 +66,7 @@ const staggerGrid = {
   visible: {
     opacity: 1,
     transition: { 
-      staggerChildren: 0.1,
+      staggerChildren: 0.08,
       delayChildren: 0.1
     }
   }
@@ -77,22 +76,22 @@ const cardHover = {
   rest: { 
     scale: 1, 
     y: 0, 
-    transition: { duration: 0.2, type: "spring", stiffness: 400 } 
+    transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 25 } 
   },
   hover: { 
-    scale: 1.03, 
-    y: -8, 
+    scale: 1.02, 
+    y: -4, 
     transition: { 
       duration: 0.3, 
       type: "spring", 
       stiffness: 300,
-      damping: 15
+      damping: 20
     } 
   }
 };
 
 const timelineItem = {
-  hidden: { opacity: 0, x: -50 },
+  hidden: { opacity: 0, x: -30 },
   visible: (custom) => ({ 
     opacity: 1, 
     x: 0, 
@@ -103,35 +102,12 @@ const timelineItem = {
     } 
   }),
   hover: {
-    x: 10,
+    x: 8,
     transition: { duration: 0.2, type: "spring", stiffness: 400 }
   }
 };
 
-const glowPulse = {
-  animate: {
-    scale: [1, 1.2, 1],
-    opacity: [0.3, 0.6, 0.3],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
-};
-
-const floatAnimation = {
-  animate: {
-    y: [0, -20, 0],
-    transition: {
-      duration: 6,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
-};
-
-// Enhanced Solo Pilot Animation Component with more dynamic movement
+// Solo Pilot Animation Component
 const SoloPilot = () => {
   const waypoints = [
     { x: "5%", y: "10%" },
@@ -166,7 +142,7 @@ const SoloPilot = () => {
       <motion.div
         animate={{
           rotate: 360,
-          scale: [1, 1.3, 1],
+          scale: [1, 1.2, 1],
         }}
         transition={{
           rotate: { duration: 3, repeat: Infinity, ease: "linear" },
@@ -175,27 +151,16 @@ const SoloPilot = () => {
       >
         <div className="relative">
           <div className="absolute inset-0 animate-ping-slow">
-            <div className="w-3 h-3 rounded-full bg-accent/30 blur-md" />
+            <div className="w-2 h-2 rounded-full bg-accent/40 blur-md" />
           </div>
-          <div className="relative w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_rgba(0,255,196,0.6)] animate-pulse" />
-          <motion.div
-            className="absolute -top-1 -left-1 w-1 h-1 rounded-full bg-accent/40"
-            animate={{
-              rotate: 360,
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              rotate: { duration: 2, repeat: Infinity, ease: "linear" },
-              scale: { duration: 1, repeat: Infinity },
-            }}
-          />
+          <div className="relative w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_10px_rgba(0,255,196,0.8)]" />
         </div>
       </motion.div>
     </motion.div>
   );
 };
 
-// Enhanced Glow Trail that follows mouse with trail effect
+// Professional Glow Trail
 const GlowTrail = () => {
   const [mousePos, setMousePos] = React.useState({ x: 0, y: 0 });
   const [isMoving, setIsMoving] = React.useState(false);
@@ -218,38 +183,25 @@ const GlowTrail = () => {
     <motion.div
       className="fixed z-[99] pointer-events-none"
       animate={{
-        x: mousePos.x - 12,
-        y: mousePos.y - 12,
-        opacity: isMoving ? 0.8 : 0,
-        scale: isMoving ? 1 : 0.6,
+        x: mousePos.x - 10,
+        y: mousePos.y - 10,
+        opacity: isMoving ? 0.6 : 0,
+        scale: isMoving ? 1 : 0.8,
       }}
       transition={{ type: "spring", stiffness: 600, damping: 25 }}
     >
-      <motion.div
-        animate={{
-          rotate: 360,
-        }}
-        transition={{
-          rotate: { duration: 2, repeat: Infinity, ease: "linear" }
-        }}
-      >
-        <div className="relative">
-          <div className="w-6 h-6 rounded-full bg-gradient-to-r from-accent/30 to-accent/10 blur-sm" />
-          <div className="absolute inset-0 w-6 h-6 rounded-full bg-accent/15 blur-md" />
-          <div className="absolute inset-1 w-4 h-4 rounded-full bg-accent/20 blur-sm" />
-        </div>
-      </motion.div>
+      <div className="w-5 h-5 rounded-full bg-gradient-to-r from-accent/20 to-accent/5 blur-md" />
     </motion.div>
   );
 };
 
 // Floating Particles Component
 const FloatingParticles = () => {
-  const particles = Array.from({ length: 20 }, (_, i) => ({
+  const particles = Array.from({ length: 15 }, (_, i) => ({
     id: i,
-    size: Math.random() * 3 + 1,
+    size: Math.random() * 2 + 1,
     left: Math.random() * 100,
-    duration: Math.random() * 10 + 10,
+    duration: Math.random() * 15 + 10,
     delay: Math.random() * 5,
   }));
 
@@ -258,7 +210,7 @@ const FloatingParticles = () => {
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute bg-accent/10 rounded-full"
+          className="absolute bg-accent/5 rounded-full"
           style={{
             width: particle.size,
             height: particle.size,
@@ -267,8 +219,7 @@ const FloatingParticles = () => {
           }}
           animate={{
             y: ["-100vh", "100vh"],
-            x: [0, Math.random() * 100 - 50],
-            opacity: [0, 0.5, 0],
+            opacity: [0, 0.3, 0],
           }}
           transition={{
             duration: particle.duration,
@@ -311,8 +262,8 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About"
-        description="Abu Bakar is a Full Stack Developer focused on enterprise software with Java, Spring Boot, React and Angular."
+        title="About | Abu Bakar"
+        description="Full Stack Developer specializing in enterprise software with Java, Spring Boot, React, and Angular. 8+ years of experience building scalable systems."
         path="/about"
       />
 
@@ -322,23 +273,30 @@ export default function About() {
           0% { transform: scale(1); opacity: 0.6; }
           75%, 100% { transform: scale(3); opacity: 0; }
         }
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
         @keyframes gradientShift {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
         }
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes soft-float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-10px) rotate(2deg); }
+        }
         .animate-ping-slow {
           animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
         }
         .gradient-shift {
           background-size: 200% 200%;
           animation: gradientShift 8s ease infinite;
+        }
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
+        .soft-float {
+          animation: soft-float 6s ease-in-out infinite;
         }
       `}</style>
       
@@ -351,97 +309,165 @@ export default function About() {
       {/* Floating Particles Background */}
       <FloatingParticles />
       
-      {/* Animated Gradient Background */}
+      {/* Black Gradient Background - Changed to black */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-ink-950 via-ink-900 to-ink-950" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-ink-950 to-black" />
         <motion.div 
-          className="absolute top-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[120px]"
+          className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[150px]"
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
+            opacity: [0.2, 0.4, 0.2],
           }}
           transition={{
-            duration: 5,
+            duration: 8,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
         <motion.div 
-          className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px]"
+          className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px]"
           animate={{
             scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.2, 0.4],
+            opacity: [0.3, 0.1, 0.3],
           }}
           transition={{
-            duration: 7,
+            duration: 10,
             repeat: Infinity,
             ease: "easeInOut",
             delay: 1,
           }}
         />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-accent/3 to-primary/3 rounded-full blur-[150px]" />
       </div>
 
-      {/* Hero Section */}
+      {/* Hero Section - Image only at top on mobile, side by side on desktop */}
       <motion.section 
         ref={heroRef}
         initial="hidden"
         animate={heroInView ? "visible" : "hidden"}
         variants={fadeInUp}
-        className="max-w-page container-px pt-20 pb-16 relative"
+        className="max-w-6xl mx-auto px-6 pt-24 pb-20 relative"
       >
-        <motion.div 
-          variants={fadeInLeft}
-          className="eyebrow mb-6 opacity-80 inline-block"
-        >
-          About
-        </motion.div>
-        <motion.h1 
-          variants={fadeInUp}
-          className="h-display text-4xl md:text-6xl max-w-3xl bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent gradient-shift"
-        >
-          An engineer for the long, unglamorous middle.
-        </motion.h1>
-        <motion.p 
-          variants={fadeInUp}
-          className="mt-8 max-w-2xl text-white/65 text-lg leading-relaxed"
-        >
-          I'm Abu Bakar — a full stack developer with a Java backend background
-          and a frontend obsession. I build software for teams who need it to
-          keep working long after the launch announcement is forgotten.
-        </motion.p>
+        {/* Mobile Layout: Image at top, then text */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+          
+          {/* Image Section - Shows at top on mobile, right side on desktop */}
+          <div className="lg:order-2 block">
+            <motion.div 
+              variants={fadeInRight}
+              className="flex-shrink-0 relative group"
+            >
+              {/* Outer ring glow */}
+              <motion.div
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-accent/20 via-accent/10 to-transparent blur-2xl"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              
+              {/* Rotating border */}
+              <div className="absolute inset-[-3px] rounded-full border border-accent/40 animate-spin-slow" />
+              
+              {/* Image Container */}
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden bg-gradient-to-br from-ink-800 to-ink-900 shadow-2xl mx-auto lg:mx-0">
+                <img 
+                  src="/Photograph.jpg" 
+                  alt="Abu Bakar - Full Stack Developer"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                />
+                
+                {/* Overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-accent/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+
+              {/* Professional decorative ring */}
+              <div className="absolute -inset-4 rounded-full border border-accent/10 pointer-events-none hidden lg:block" />
+              
+              {/* Status Badge */}
+              <motion.div 
+                className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-1.5 bg-black/95 backdrop-blur-sm rounded-full border border-accent/30 shadow-lg whitespace-nowrap"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, type: "spring" }}
+              >
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
+                  <span className="text-xs text-slate-300 font-medium tracking-wide">OPEN FOR WORK</span>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Text Section */}
+          <div className="flex-1 space-y-6 text-center lg:text-left">
+            <motion.div 
+              variants={fadeInLeft}
+              className="inline-flex items-center gap-2 text-accent font-mono text-sm tracking-wider justify-center lg:justify-start"
+            >
+              <span className="w-8 h-px bg-accent/50 hidden lg:inline-block" />
+              ABOUT ME
+            </motion.div>
+            
+            <motion.h1 
+              variants={fadeInUp}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent gradient-shift"
+            >
+              Engineer for the
+              <br />
+              long run.
+            </motion.h1>
+            
+            <motion.p 
+              variants={fadeInUp}
+              className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl mx-auto lg:mx-0"
+            >
+              I'm Abu Bakar — a full stack developer with deep Java expertise
+              and a frontend craft. I build systems that outlast their launch hype.
+            </motion.p>
+            
+            <motion.div 
+              variants={fadeInUp}
+              className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start"
+            >
+              <div className="flex items-center gap-2 justify-center sm:justify-start">
+                <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                <span className="text-sm text-slate-400">Available for contracts</span>
+              </div>
+              <div className="hidden sm:block w-px h-4 bg-slate-700" />
+              <div className="flex items-center gap-2 justify-center sm:justify-start">
+                <span className="text-sm text-slate-400">📍 Remote | On Site · UTC+5</span>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </motion.section>
 
-      {/* Main Content Grid */}
-      <section className="max-w-page container-px py-16 grid lg:grid-cols-[1.2fr_1fr] gap-14 relative">
+      {/* Main Content Grid - Professional Layout */}
+      <section className="max-w-6xl mx-auto px-6 py-16 grid lg:grid-cols-[1.2fr_0.8fr] gap-12">
         <motion.div 
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={staggerContainer}
-          className="space-y-6 text-white/70 leading-relaxed"
+          className="space-y-6 text-slate-300 leading-relaxed"
         >
-          <motion.p 
-            variants={fadeInLeft}
-            whileHover={{ x: 10, transition: { duration: 0.2 } }}
-          >
+          <motion.p variants={fadeInLeft} className="text-base">
             Most of my work is invisible to the people it serves — internal
             tools, back-office platforms, the systems that quietly keep
             warehouses, finance teams and sales orgs moving. That suits me.
           </motion.p>
-          <motion.p 
-            variants={fadeInLeft}
-            whileHover={{ x: 10, transition: { duration: 0.2 } }}
-          >
+          <motion.p variants={fadeInLeft} className="text-base">
             I write Java and Spring Boot on the backend, React or Angular on
             the frontend, and PostgreSQL underneath when I have a choice. I've
             shipped microservices when the system needed them, and well-factored
             monoliths when it didn't.
           </motion.p>
-          <motion.p 
-            variants={fadeInLeft}
-            whileHover={{ x: 10, transition: { duration: 0.2 } }}
-          >
+          <motion.p variants={fadeInLeft} className="text-base">
             My favourite engagements are 3–9 months, with a single client, a
             real budget, and a clear measure of success. I keep my roster small
             on purpose.
@@ -453,39 +479,34 @@ export default function About() {
           initial="hidden"
           animate={snapshotInView ? "visible" : "hidden"}
           variants={fadeInRight}
-          whileHover={{ scale: 1.02, y: -5 }}
-          transition={{ type: "spring", stiffness: 400, damping: 20 }}
-          className="card p-7 bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 shadow-2xl"
+          className="bg-black/50 backdrop-blur-sm rounded-2xl border border-white/10 p-6 hover:border-accent/30 transition-all duration-300"
         >
-          <motion.div 
-            className="text-xs uppercase tracking-[0.22em] text-accent"
-            whileHover={{ letterSpacing: "0.3em", transition: { duration: 0.3 } }}
-          >
-            Snapshot
-          </motion.div>
-          <dl className="mt-5 grid grid-cols-2 gap-y-4 text-sm">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-1 h-8 bg-accent rounded-full" />
+            <h3 className="text-accent font-mono text-sm tracking-wider">TECH STACK</h3>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-4">
             {[
-              ["Role", "Full Stack Developer"],
-              ["Years", "8+"],
-              ["Backend", "Java, Spring Boot"],
-              ["Frontend", "React, Angular"],
-              ["Database", "PostgreSQL, Oracle"],
-              ["Cloud", "AWS, Docker"],
-              ["Working hours", "Remote, 4h overlap"],
-              ["Languages", "English, Urdu"],
-            ].map(([dt, dd], idx) => (
+              { label: "Backend", value: "Java, Spring Boot, Spring Security, REST APIs, Microservices, Spring Cloud" },
+              { label: "Frontend", value: "React, Angular" },
+              { label: "Database", value: "PostgreSQL, Oracle, MongoDB" },
+              { label: "DevOps", value: "AWS, Docker, Kubernetes, Jenkins" },
+              { label: "Experience", value: "3+ Years" },
+              { label: "Location", value: "Remote | On Site · UTC+5" },
+            ].map((item, idx) => (
               <motion.div
-                key={dt}
+                key={item.label}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.05 }}
-                className="contents"
+                className="space-y-1"
               >
-                <dt className="text-white/45">{dt}</dt>
-                <dd className="text-white font-medium">{dd}</dd>
+                <dt className="text-xs text-slate-500 uppercase tracking-wider">{item.label}</dt>
+                <dd className="text-sm text-white font-medium">{item.value}</dd>
               </motion.div>
             ))}
-          </dl>
+          </div>
         </motion.aside>
       </section>
 
@@ -495,37 +516,28 @@ export default function About() {
         initial="hidden"
         animate={principlesInView ? "visible" : "hidden"}
         variants={staggerContainer}
-        className="max-w-page container-px py-16 relative"
+        className="max-w-6xl mx-auto px-6 py-20"
       >
         <SectionHeader eyebrow="Principles" title="What I won't compromise on." />
         <motion.div 
           variants={staggerGrid}
-          className="mt-14 grid md:grid-cols-2 gap-6"
+          className="mt-12 grid md:grid-cols-2 gap-6"
         >
-          {principles.map((p, idx) => (
+          {principles.map((p) => (
             <motion.div
               key={p.t}
               variants={cardHover}
               initial="rest"
               whileHover="hover"
               animate="rest"
-              custom={idx}
-              className="card p-7 bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 hover:border-accent/30 transition-all duration-300 cursor-pointer"
+              className="group bg-black/50 backdrop-blur-sm rounded-xl border border-white/10 p-6 hover:border-accent/30 transition-all duration-300"
             >
-              <motion.h3 
-                className="font-display text-2xl text-white"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.2 }}
-              >
+              <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-accent transition-colors">
                 {p.t}
-              </motion.h3>
-              <motion.p 
-                className="mt-3 text-white/60 text-sm leading-relaxed"
-                initial={{ opacity: 0.6 }}
-                whileHover={{ opacity: 1 }}
-              >
+              </h3>
+              <p className="text-sm text-slate-400 leading-relaxed group-hover:text-slate-300">
                 {p.d}
-              </motion.p>
+              </p>
             </motion.div>
           ))}
         </motion.div>
@@ -537,138 +549,76 @@ export default function About() {
         initial="hidden"
         animate={timelineInView ? "visible" : "hidden"}
         variants={staggerContainer}
-        className="max-w-page container-px py-20 relative"
+        className="max-w-6xl mx-auto px-6 py-20"
       >
-        <SectionHeader eyebrow="Timeline" title="Recent journey." />
-        <motion.div 
-          variants={staggerContainer}
-          className="mt-14 relative"
-        >
-          <motion.div 
-            className="absolute left-[11px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-accent via-accent/30 to-transparent"
-            initial={{ scaleY: 0 }}
-            animate={{ scaleY: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          />
-          <ol className="relative pl-8 space-y-10">
-            {timeline.map((t, idx) => (
-              <motion.li 
-                key={t.y} 
+        <SectionHeader eyebrow="Experience" title="Recent journey." />
+        <div className="mt-12 relative">
+          <div className="absolute left-[11px] top-0 bottom-0 w-px bg-gradient-to-b from-accent via-accent/30 to-transparent" />
+          
+          <div className="space-y-8">
+            {timeline.map((item, idx) => (
+              <motion.div 
+                key={item.y} 
                 variants={timelineItem}
                 custom={idx}
                 whileHover="hover"
-                className="relative group"
+                className="relative pl-8 group"
               >
-                <motion.span 
-                  className="absolute -left-[33px] top-2 h-3 w-3 rounded-full bg-accent ring-4 ring-ink-950 group-hover:ring-accent/30 transition-all duration-300"
-                  whileHover={{ scale: 1.5 }}
-                />
-                <motion.div 
-                  className="text-xs font-mono text-accent group-hover:text-accent/80 transition-colors"
-                  whileHover={{ x: 5 }}
-                >
-                  {t.y}
-                </motion.div>
-                <motion.div 
-                  className="font-display text-xl text-white mt-1 group-hover:text-accent transition-colors"
-                  whileHover={{ x: 5 }}
-                >
-                  {t.t}
-                </motion.div>
-                <motion.p 
-                  className="mt-2 text-white/60 text-sm leading-relaxed max-w-xl group-hover:text-white/80 transition-colors"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.1 + 0.3 }}
-                >
-                  {t.d}
-                </motion.p>
-              </motion.li>
+                <div className="absolute -left-[33px] top-1.5 w-3 h-3 rounded-full bg-accent ring-4 ring-black group-hover:ring-accent/20 transition-all" />
+                <div className="text-xs font-mono text-accent mb-1">{item.y}</div>
+                <div className="text-lg font-semibold text-white mb-1 group-hover:text-accent transition-colors">
+                  {item.t}
+                </div>
+                <p className="text-sm text-slate-400 leading-relaxed max-w-xl">
+                  {item.d}
+                </p>
+              </motion.div>
             ))}
-          </ol>
-        </motion.div>
+          </div>
+        </div>
       </motion.section>
 
-      {/* CTA Section */}
+      {/* Professional CTA Section */}
       <motion.section 
         ref={ctaRef}
         initial="hidden"
         animate={ctaInView ? "visible" : "hidden"}
         variants={fadeInUp}
-        className="max-w-page container-px py-20 relative"
+        className="max-w-6xl mx-auto px-6 py-20"
       >
-        <motion.div 
-          whileHover={{ scale: 1.02, y: -5 }}
-          transition={{ duration: 0.3, type: "spring", stiffness: 400 }}
-          className="card p-10 flex flex-wrap items-center justify-between gap-6 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent backdrop-blur-sm border border-accent/20 shadow-2xl relative overflow-hidden group"
-        >
+        <div className="bg-gradient-to-br from-accent/10 via-accent/5 to-transparent rounded-2xl border border-accent/20 p-10 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+            Have a project in mind?
+          </h2>
+          <p className="text-slate-400 mb-6">
+            I'm currently accepting one new engagement for the next quarter.
+          </p>
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/5 to-accent/0"
-            animate={{
-              x: ["-100%", "100%"],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              repeatDelay: 2,
-            }}
-          />
-          <div>
-            <motion.h2 
-              className="h-display text-3xl bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent"
-              whileHover={{ scale: 1.02 }}
-            >
-              Have a project in mind?
-            </motion.h2>
-            <motion.p 
-              className="mt-2 text-white/60 text-sm"
-              whileHover={{ color: "rgba(255,255,255,0.8)" }}
-            >
-              I'm currently accepting one new engagement for the next quarter.
-            </motion.p>
-          </div>
-          <motion.div
-            whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 500, damping: 10 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
           >
             <Link 
               to="/contact" 
-              className="btn-primary relative overflow-hidden group inline-block px-6 py-3 bg-accent text-white rounded-lg font-medium shadow-lg shadow-accent/20 hover:shadow-accent/40 transition-all duration-300"
+              className="inline-block px-8 py-3 bg-accent text-black font-semibold rounded-lg shadow-lg shadow-accent/20 hover:shadow-accent/40 transition-all duration-300"
             >
-              <span className="relative z-10">Get in touch</span>
-              <motion.span 
-                className="absolute inset-0 bg-gradient-to-r from-accent to-accent/80"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
+              Get in touch →
             </Link>
           </motion.div>
-        </motion.div>
+        </div>
       </motion.section>
 
-      {/* Scroll Progress Indicator */}
+      {/* Subtle Scroll Indicator */}
       <motion.div 
-        className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-accent/10 backdrop-blur-sm border border-accent/20 flex items-center justify-center z-50"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
+        className="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-black/80 backdrop-blur-sm border border-accent/20 flex items-center justify-center z-50 cursor-pointer"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
+        whileHover={{ scale: 1.1 }}
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
       >
-        <motion.div
-          className="text-accent text-xs font-mono"
-          animate={{
-            y: [0, 5, 0],
-          }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          ▼
-        </motion.div>
+        <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
       </motion.div>
     </>
   );

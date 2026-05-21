@@ -24,27 +24,23 @@ const personJsonLd = {
 };
 
 const stats = [
-  { k: "8+", v: "Years building" },
-  { k: "40+", v: "Production systems" },
-  { k: "14", v: "Industries served" },
+  { k: "3+", v: "Years building" },
+  { k: "10+", v: "Production systems" },
+  { k: "3", v: "Industries served" },
   { k: "92%", v: "Repeat clients" },
 ];
 
 const marqueeWords = [
-  "Spring Boot",
-  "React",
-  "Angular",
-  "PostgreSQL",
-  "AWS",
-  "Microservices",
-  "TypeScript",
-  "Docker",
-  "MongoDB",
-  "Java",
-  "Node.js",
+  "Advanced Java", "Core Java", "Spring Boot", "Spring Security",
+  "Microservices", "Spring Cloud", "REST APIs", "JWT Authentication",
+  "OAuth 2.0", "API Gateway", "Service Discovery", "Apache Kafka",
+  "RabbitMQ", "Redis", "WebSockets", "PostgreSQL", "MySQL",
+  "MongoDB", "Docker", "Kubernetes", "AWS", "CI/CD", "Jenkins",
+  "GitHub Actions", "Nginx", "JUnit", "Mockito", "Swagger / OpenAPI",
+  "System Design", "Scalable Architecture"
 ];
 
-// Enhanced Animation variants for mobile performance
+// Animation variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
@@ -93,7 +89,7 @@ const AnimatedText = ({ text, className, delay = 0 }) => {
   );
 };
 
-// Animated Background Circles Component
+// Animated Background Circles Component - SAME AS BEFORE
 const AnimatedBackgroundCircles = () => {
   const circles = [
     { size: "w-96 h-96", top: "-10%", left: "-5%", delay: 0, duration: 20, color: "from-accent/5" },
@@ -133,7 +129,7 @@ const AnimatedBackgroundCircles = () => {
   );
 };
 
-// Floating particles component
+// Floating particles component - SAME AS BEFORE
 const FloatingParticles = () => {
   const particles = Array.from({ length: 50 }, (_, i) => ({
     id: i,
@@ -171,7 +167,7 @@ const FloatingParticles = () => {
   );
 };
 
-// Gradient text hover effect
+// Gradient text hover effect - SAME AS BEFORE
 const GradientHover = ({ children, className = "" }) => {
   return (
     <motion.span
@@ -268,7 +264,7 @@ export default function Home() {
         jsonLd={personJsonLd}
       />
 
-      {/* Animated Background Elements */}
+      {/* Animated Background Elements - NO CHANGES */}
       <AnimatedBackgroundCircles />
       <FloatingParticles />
 
@@ -396,7 +392,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Animated Tech Marquee */}
+        {/* Animated Tech Marquee with your tech stack */}
         <div className="relative border-y border-line overflow-hidden bg-ink-900/40">
           <motion.div 
             className="flex whitespace-nowrap py-4 md:py-5"
@@ -406,12 +402,12 @@ export default function Home() {
             {[...marqueeWords, ...marqueeWords].map((w, i) => (
               <motion.span
                 key={i}
-                className="mx-4 md:mx-8 font-display text-xl md:text-2xl text-white/30"
+                className="mx-4 md:mx-8 font-display text-sm md:text-base lg:text-xl text-white/30"
                 whileHover={{ color: "#8b5cf6", scale: 1.1 }}
                 transition={{ duration: 0.2 }}
               >
                 <GradientHover>{w}</GradientHover>
-                <span className="ml-4 md:ml-8 text-accent/40">/</span>
+                <span className="ml-4 md:ml-8 text-accent/40">◆</span>
               </motion.span>
             ))}
           </motion.div>
